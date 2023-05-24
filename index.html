@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Encriptador</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+    </head>
+
+    <body>
+
+        <header>
+            <img class="logo" src="Elementos_Graficos/VectorLogo.png" alt="" >
+        </header>
+
+        <script>
+
+            function leerInput(){
+                var val = document.querySelector('input').value;
+                console.log(val);
+                if(val == ""){
+                    document.getElementById("responder2").style.display = "none";
+                }
+                else{
+                    document.getElementById("responder2").style.display = "inline";
+                }
+            }
+
+            function encriptar(){
+                const val = document.querySelector('input').value;
+                const a = val.replaceAll('e','enter');
+                const e = a.replaceAll('i','imes');
+                const i = e.replaceAll('a','ai');
+                const o = i.replaceAll('o','ober');
+                const u = o.replaceAll('u','ufat');
+                document.getElementById('resultadoEncriptado').innerHTML = u
+                console.log(encriptar)
+            }
+
+            function printEncriptar(){
+                    leerInput();
+                    encriptar();
+            }
+
+            function desencriptar(){
+                const val = document.querySelector('input').value;
+                const a = val.replaceAll('ai','a');
+                const e = a.replaceAll('enter','e');
+                const i = e.replaceAll('imes','i');
+                const o = i.replaceAll('ober','o');
+                const u = o.replaceAll('ufat','u');
+                document.getElementById('resultadoEncriptado').innerHTML = u
+                console.log(desencriptar)
+            }
+
+            function printDesencriptar(){
+                leerInput();
+                desencriptar();
+            }
+        </script>
+
+        <main class="fondo">
+            <div class="interactuar">
+                <!--<textarea name="Zona de encriptar" id="zonaEncriptar" cols="100" rows="500" placeholder="Ingrese el texto aqui"></textarea>-->
+                <input type="text" placeholder="Ingrese el texto aqui">
+                <button class="encriptar" onmouseup="printEncriptar()">Encriptar</button>
+                <button class="desencriptar" onclick="printDesencriptar()">Desencriptar</button>
+            </div>
+            <div class="alerta">
+                <img src="Elementos_Graficos/Vector.png" alt="">
+                <p>Solo letras minúsculas y sin acentos</p>
+            </div>
+            <div class="responder">
+                <img src="Elementos_Graficos/Muñeco.png" alt="">
+                <h2>Ningún mensaje fue ingresado</h2>
+                <p>Ingresa el texto que desees encriptar o desencriptar</p>
+            </div>
+            <div id="responder2">
+                <p id="resultadoEncriptado"></p>
+                <button class="copiar" onclick="updateClipboard(newClip)">Copiar</button>
+            </div>
+
+        </main>
+
+        <footer class="fondo">
+            <p>&copy Página desarrollada por Sebastian Medina - 2023</p>
+        </footer>
+
+    </body>
+</html>
