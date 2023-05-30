@@ -18,69 +18,26 @@
             <img class="logo" src="Elementos_Graficos/VectorLogo.png" alt="" >
         </header>
 
-        <script>
-
-            function leerInput(){
-                var val = document.querySelector('input').value;
-                console.log(val);
-                if(val == ""){
-                    document.getElementById("responder2").style.display = "none";
-                }
-                else{
-                    document.getElementById("responder2").style.display = "inline";
-                }
-            }
-
-            function encriptar(){
-                const val = document.querySelector('input').value;
-                const a = val.replaceAll('e','enter');
-                const e = a.replaceAll('i','imes');
-                const i = e.replaceAll('a','ai');
-                const o = i.replaceAll('o','ober');
-                const u = o.replaceAll('u','ufat');
-                document.getElementById('resultadoEncriptado').innerHTML = u
-                console.log(encriptar)
-            }
-
-            function printEncriptar(){
-                    leerInput();
-                    encriptar();
-            }
-
-            function desencriptar(){
-                const val = document.querySelector('input').value;
-                const a = val.replaceAll('ai','a');
-                const e = a.replaceAll('enter','e');
-                const i = e.replaceAll('imes','i');
-                const o = i.replaceAll('ober','o');
-                const u = o.replaceAll('ufat','u');
-                document.getElementById('resultadoEncriptado').innerHTML = u
-                console.log(desencriptar)
-            }
-
-            function printDesencriptar(){
-                leerInput();
-                desencriptar();
-            }
-        </script>
-
         <main class="fondo">
             <div class="interactuar">
-                <!--<textarea name="Zona de encriptar" id="zonaEncriptar" cols="100" rows="500" placeholder="Ingrese el texto aqui"></textarea>-->
+                <!--Area para poder escribir-->
                 <input type="text" placeholder="Ingrese el texto aqui">
                 <button class="encriptar" onmouseup="printEncriptar()">Encriptar</button>
                 <button class="desencriptar" onclick="printDesencriptar()">Desencriptar</button>
             </div>
             <div class="alerta">
+                <!--Alerta de lo que se puede y no se puede hacer-->
                 <img src="Elementos_Graficos/Vector.png" alt="">
                 <p>Solo letras minúsculas y sin acentos</p>
             </div>
             <div class="responder">
+                <!--Area de respuesta cuando no hay mensaje-->
                 <img src="Elementos_Graficos/Muñeco.png" alt="">
                 <h2>Ningún mensaje fue ingresado</h2>
                 <p>Ingresa el texto que desees encriptar o desencriptar</p>
             </div>
             <div id="responder2">
+                <!--Area de respuesta cuando hay mensaje-->
                 <p id="resultadoEncriptado"></p>
                 <button class="copiar" onclick="updateClipboard(newClip)">Copiar</button>
             </div>
@@ -91,5 +48,6 @@
             <p>&copy Página desarrollada por Sebastian Medina - 2023</p>
         </footer>
 
+        <script src="index.js"></script>
     </body>
 </html>
